@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { Button } from "primereact/button";
+import { Card } from "primereact/card";
+import { InputText } from "primereact/inputtext";
 
 export default function Home() {
   return (
@@ -12,6 +15,27 @@ export default function Home() {
           height={20}
           priority
         />
+        
+        {/* PrimeReact Example Section */}
+        <Card title="PrimeReact Demo" className="w-full mb-6 shadow-md">
+          <div className="flex flex-col gap-4">
+            <p className="text-zinc-600 dark:text-zinc-400">
+              PrimeReact is now set up and working with TailwindCSS v4! 🎉
+            </p>
+            <div className="flex flex-col gap-3">
+              <InputText 
+                placeholder="Try typing here..." 
+                className="w-full"
+              />
+              <div className="flex gap-2">
+                <Button label="Primary" icon="pi pi-check" />
+                <Button label="Secondary" icon="pi pi-times" severity="secondary" />
+                <Button label="Success" icon="pi pi-star" severity="success" />
+              </div>
+            </div>
+          </div>
+        </Card>
+
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
             To get started, edit the page.tsx file.

@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
+
+/* PrimeReact layer order - ensure TailwindCSS utilities can override PrimeReact styles */
+@layer primereact, tailwind;
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* PrimeReact Condensed/Dense Mode */
+  font-size: 14px;
 }
 
 @theme inline {
