@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Blog Frontend
+
+A beautiful, responsive blog frontend built with Next.js 16, PrimeReact, and Zustand.
+
+## Features
+
+- 🎨 Beautiful UI with PrimeReact components
+- 🔍 Real-time search and filtering
+- 📱 Fully responsive design
+- ⚡ Server-side rendering
+- 🎯 TypeScript
+- 🔄 Zustand state management
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+blog-frontend/
+├── app/              # Pages & components
+├── lib/
+│   ├── api/         # API functions
+│   └── types/       # TypeScript types
+└── presentation/
+    └── store/       # Zustand store
+```
 
-## Learn More
+## Connect Your API
 
-To learn more about Next.js, take a look at the following resources:
+1. Create `.env.local`:
+   ```
+   NEXT_PUBLIC_API_URL=https://your-api.com/api
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Update `lib/api/blog.ts` with real API calls
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Your API needs these endpoints:
+   - `GET /posts` → BlogPost[]
+   - `GET /categories` → string[]
+   - `GET /tags` → string[]
 
-## Deploy on Vercel
+See `API_INTEGRATION.md` for details.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tech Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js 16
+- React 19
+- TypeScript
+- PrimeReact
+- Zustand
+- Tailwind CSS
